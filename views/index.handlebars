@@ -1,0 +1,79 @@
+{{!-- ./views/index.handlebars --}}
+<!-- ./views/index.handlebars -->
+<div class="container mt-5">
+  <!--<div>
+    {{#each numbers}}
+    <span>--</span>
+    <button class="d-inline-flex align-items-center justify-content-center bg-info text-white rounded-circle my-4"
+      style="width: 30px; height:30px;">
+      {{this}}
+    </button>
+    <span>--</span>
+    {{/each}}
+  </div>-->
+  <!-- search bar -->
+  <div class="row" id="search-bar">
+    <div class="col-12">
+      <form action="/search">
+        <div class="input-group mb-3">
+          <input type="text" name="keyword" value="{{keyword}}" class="form-control"
+            placeholder="Enter movie name to search..." aria-label="Movie Name..." aria-describedby="search-button">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="submit" id="search-button">Search</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- movie list -->
+  <div class="row" id="data-panel">
+    {{#each movie}}
+    <div class="col-sm-3">
+      <a href="/movies/{{this.id}}" class="text-secondary">
+        <div class="card mb-2">
+          <img class="card-img-top" src="https://movie-list.alphacamp.io/posters/{{this.image}}" alt="Card image cap">
+          <div class="card-body movie-item-body">
+            <h6 class="card-title">{{this.title}}</h6>
+          </div>
+        </div>
+      </a>
+    </div>
+    {{/each}}
+
+    {{!-- <div class="col-sm-3">
+      <a href="/2" class="text-secondary">
+        <div class="card mb-2">
+          <img class="card-img-top" src="https://movie-list.alphacamp.io/posters/rv1AWImgx386ULjcf62VYaW8zSt.jpg"
+            alt="Card image cap">
+          <div class="card-body movie-item-body">
+            <h6 class="card-title">Ant-Man and the Wasp</h6>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-3">
+      <a href="/3" class="text-secondary">
+        <div class="card mb-2">
+          <img class="card-img-top" src="https://movie-list.alphacamp.io/posters/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg"
+            alt="Card image cap">
+          <div class="card-body movie-item-body">
+            <h6 class="card-title">Thor: Ragnarok</h6>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="col-sm-3">
+      <a href="/4" class="text-secondary">
+        <div class="card mb-2">
+          <img class="card-img-top" src="https://movie-list.alphacamp.io/posters/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+            alt="Card image cap">
+          <div class="card-body movie-item-body">
+            <h6 class="card-title">Avengers: Infinity War</h6>
+          </div>
+        </div>
+      </a>
+    </div> --}}
+  </div>
+</div>
